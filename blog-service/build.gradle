@@ -5,8 +5,14 @@ plugins {
 }
 
 group = 'com.kaleshrikant'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 description = 'Demo project for Spring Boot for Kubernetes Ingress'
+
+bootJar {
+    archiveFileName = 'blog-service.jar'
+    mainClass = 'com.kaleshrikant.BlogServiceApplication'
+}
+
 
 java {
 	toolchain {
