@@ -1,7 +1,14 @@
+# Use the official OpenJDK 21 image from Docker Hub
 FROM openjdk:21-slim
 
-EXPOSE 8081
+# Set working directory inside the container
+WORKDIR /app
 
-ADD build/libs/blog-service.jar blog-service.jar
+# Copy the compiled Java application JAR file into the container
+COPY ./build/libs/blog-service.jar /app
 
-ENTRYPOINT ["java", "-jar", "blog-service.jar"]
+# Expose the port the Spring Boot application will run on
+EXPOSE 8080
+
+# Command to run the application
+CMD ["java", "-jar", "blog-service.jar"]
